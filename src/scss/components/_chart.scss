@@ -1,0 +1,139 @@
+.stats-container {
+  display: grid;
+  margin: 0;
+  padding: .5em;
+  background-image: $gradient-1;
+  //background-color: $color-secondary-1-3;
+  border-color: $color-primary-1;
+  border-style: solid;
+  grid-template-columns: 6fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  list-style-type: none;
+  border-radius: .2em;
+  grid-gap: 0.4em;
+}
+$d: 20rem;
+
+@for $i from 0 through 100 {
+  .pie-percent-#{$i} {
+    --p: #{$i}
+  }
+}
+
+.chart-description {
+  background-image: $gradient-2;
+  border-color: $color-primary-1;
+  border-style: solid;
+  @extend .timeline-description;
+  margin-top: 0;
+}
+
+.chart-description > p {
+  color: $color-primary-1;
+  word-break: break-word;
+  text-justify: inter-word;
+  text-align: justify;
+}
+
+.stat-category {
+  padding: 0.5em;
+  border-style: solid;
+  border-color: $color-primary-5;
+  color: $color-secondary-2-2;
+  font-weight: bold;
+}
+
+.chart-description > .color-secondary-2-2 {
+  color: $color-secondary-2-2;
+}
+
+.pie {
+  font-family: Digital-7;
+  font-size: 1.2em;
+  width: 0;
+  padding: 0.2em 50%;
+  border-radius: 5px;
+  border-color: $color-primary-1;
+  border-style: solid;
+  --stop-list:
+          #{$color-complement-1} calc(var(--p)*0.1%),
+          #{$color-secondary-1-4} calc(var(--p)*0.6%),
+          #{$color-secondary-2-0} calc(var(--p)*0.7%),
+          #{$color-secondary-2-1} calc(var(--p)*0.7% + 1%),
+          #{$color-secondary-2-1} 72%,
+          #{$color-secondary-2-2} 75%,
+          #{$color-secondary-2-1} 0%;
+  background: linear-gradient(0deg, var(--stop-list));
+  transition: --p .5s;
+
+  &:after {
+    position: absolute;
+    transform: translate(-50%, -50%) var(--pos, #{unquote(' ')});
+    color: $color-secondary-2-0;
+    font-size: 1em;
+    counter-reset: p var(--p);
+    content: counter(p) '%';
+    padding: 0.3em;
+    border-radius: 0.2em;
+    text-shadow: 0 0 0.2em #fff;
+    -webkit-animation: blinking 1s infinite;
+    -moz-animation: blinking  1s infinite;
+    animation: blinking  2s infinite;
+  }
+}
+
+@-webkit-keyframes blinking
+{
+  0% {
+    text-shadow: 0 0 0.2em #fff;
+  }
+  15% {
+    text-shadow: 0 0 0.3em #fff;
+  }
+  30% {
+    text-shadow: 0 0 0.4em #fff;
+  }
+  75% {
+    text-shadow: 0 0 0.3em #fff;
+  }
+  100% {
+    text-shadow: 0 0 0.2em #fff;
+  }
+}
+
+@-moz-keyframes blinking
+{
+  0% {
+    text-shadow: 0 0 0.2em #fff;
+  }
+  15% {
+    text-shadow: 0 0 0.3em #fff;
+  }
+  30% {
+    text-shadow: 0 0 0.4em #fff;
+  }
+  75% {
+    text-shadow: 0 0 0.3em #fff;
+  }
+  100% {
+    text-shadow: 0 0 0.2em #fff;
+  }
+}
+@keyframes blinking
+{
+  0% {
+    text-shadow: 0 0 0.2em #fff;
+  }
+  15% {
+    text-shadow: 0 0 0.3em #fff;
+  }
+  30% {
+    text-shadow: 0 0 0.4em #fff;
+  }
+  75% {
+    text-shadow: 0 0 0.3em #fff;
+  }
+  100% {
+    text-shadow: 0 0 0.2em #fff;
+  }
+}

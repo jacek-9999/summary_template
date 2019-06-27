@@ -1,0 +1,21 @@
+// import all styles
+
+// helpers
+@import 'helpers/_variables';
+@import 'helpers/_mixins';
+
+// base
+@import 'base/_normalize';
+@import 'base/_base';
+@import 'base/_layout';
+
+// components
+@import 'components/_fonts';
+//@import 'components/_header';
+@import 'components/_footer';
+@import 'components/_iconlist';
+@import 'components/_linklist';
+@import 'components/_container';
+@import 'components/_timeline';
+@import 'components/_chart';
+@import 'components/_cv';

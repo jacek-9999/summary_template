@@ -1,0 +1,33 @@
+.container {
+  display: grid;
+  grid-template-areas: "cv cv"
+  "timeline1   timeline1"
+  "timeline2   timeline2"
+  "main  main"
+  "main  main";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(5, auto);
+  grid-gap: 1.5em;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+header {
+  grid-area: title;
+}
+
+nav {
+  grid-area: nav;
+}
+
+.main {
+  grid-area: main;
+}
+
+.sidebar-top {
+  grid-area: aside1;
+}
+
+.sidebar-bottom {
+  grid-area: aside2;
+}

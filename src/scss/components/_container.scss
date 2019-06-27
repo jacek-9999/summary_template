@@ -1,0 +1,17 @@
+.tile {
+  padding: 1.5em;
+  background-color: $color-primary-0;
+  color: $color-primary-1;
+}
+
+.tile > :first-child {
+  margin-top: 0;
+}
+
+.tile * + * {
+  margin-top: 1.5em;
+}
+
+.page-heading {
+  margin: 0;
+}

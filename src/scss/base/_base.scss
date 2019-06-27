@@ -1,0 +1,21 @@
+// Base styles
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Audiowide-Regular;
+  min-height: 400px;
+  background-image: url('/demo_4_cv/build/images/tile2.jpg');
+  background-size: 200px, cover;
+  background-repeat: repeat, no-repeat;
+  background-position: center center;
+  background-blend-mode: soft-light;
+  background-color: $color-secondary-2-1;
+}
